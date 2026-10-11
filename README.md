@@ -1,64 +1,62 @@
-# Jenkins CI/CD Pipeline with Docker and AWS EC2
+# Jenkins CI/CD Pipeline with Docker and Flask
 
 ## Project Overview
 
-Built and successfully executed a Jenkins CI/CD pipeline on an AWS EC2 instance to automate the building and publishing of a Dockerized Python Flask application.
+Built and successfully executed a Jenkins CI/CD pipeline on AWS EC2 that automated Docker image builds and pushed a Flask application to Docker Hub. Verified successful pipeline execution and confirmed the published container image.
 
-This hands-on project demonstrates practical experience with continuous integration and continuous delivery (CI/CD), containerization, cloud infrastructure, and DevOps automation.
+This hands-on project demonstrates my experience with continuous integration, containerization, cloud infrastructure, and deployment automation.
 
 ## Technologies Used
 
-- Amazon Web Services (AWS EC2)
-- Jenkins
-- Docker and Docker Hub
-- Git and GitHub
-- Python Flask
-- Linux (Amazon Linux 2023)
-- Jenkins Pipeline (Jenkinsfile)
-
-## Project Implementation
-
-1. Launched an AWS EC2 instance running Amazon Linux 2023.
-2. Installed and configured Docker on the EC2 instance.
-3. Deployed Jenkins using a Docker container.
-4. Configured Jenkins and installed the required plugins.
-5. Created Docker Hub credentials within Jenkins for authenticated image publishing.
-6. Configured a Jenkins pipeline using a Jenkinsfile.
-7. Built a Docker image containing a Python Flask application.
-8. Automated Docker Hub authentication and image publishing.
-9. Successfully executed the Jenkins pipeline and verified the published Docker image in Docker Hub.
+- **AWS EC2** — Hosted the Jenkins automation environment.
+- **Jenkins** — Automated the CI/CD pipeline.
+- **Docker** — Built and packaged the Flask application into a container image.
+- **Python and Flask** — Developed the web application.
+- **GitHub** — Managed application source code and project documentation.
+- **Docker Hub** — Stored the successfully published container image.
 
 ## CI/CD Workflow
 
-GitHub Source Code → Jenkins Pipeline → Docker Image Build → Docker Hub Authentication → Docker Hub Image Push
+1. Jenkins retrieves application source code from GitHub.
+2. Jenkins builds a Docker image using the Dockerfile.
+3. Jenkins authenticates with Docker Hub using stored credentials.
+4. Jenkins pushes the newly built image to Docker Hub.
+5. The completed pipeline reports a successful build.
 
-## Project Results
+## Verified Project Results
 
-- Successfully completed a Jenkins pipeline with a **SUCCESS** build status.
-- Automated the Docker image build and publishing process.
-- Verified that the Docker image and build tag were available in Docker Hub.
-- Practiced troubleshooting Docker permissions, storage capacity, and pipeline configuration issues.
+- Successfully executed the original Jenkins pipeline with the result **Finished: SUCCESS**.
+- Built and pushed the Flask application image to Docker Hub.
+- Verified the published Docker image with tag `2`.
+- Recovered the original Flask application source from the published image.
+- Successfully rebuilt and tested the Flask application locally using Docker.
+- Confirmed the application displayed: **Hello from my Jenkins Docker application!**
+
+## Published Docker Image
+
+**Docker Hub Repository:** https://hub.docker.com/r/5dwayne/jenkins-flask-app
+
+**Verified Image Tag:** `2`
+
+## Project Files
+
+- `app.py` — Original Flask application recovered from the published Docker image.
+- `requirements.txt` — Python application dependency.
+- `Dockerfile` — Docker build configuration recreated and successfully tested locally.
+- `Jenkinsfile` — Reconstructed pipeline configuration based on the completed Jenkins workflow.
+- `.gitignore` — Excludes temporary and sensitive files from Git tracking.
+- `.dockerignore` — Excludes unnecessary files from Docker builds.
 
 ## Skills Demonstrated
 
-- CI/CD pipeline development
-- Jenkins automation
-- Docker container management
-- AWS EC2 administration
-- Linux troubleshooting
-- GitHub integration
-- Container image publishing
-- DevOps workflow fundamentals
+- CI/CD pipeline automation
+- Jenkins pipeline configuration
+- Docker image creation and container management
+- AWS EC2 infrastructure administration
+- Git and GitHub version control
+- Docker Hub image publishing
+- Application troubleshooting and validation
 
-## Future Improvements
+## Project Outcome
 
-- Add automated application tests to the pipeline.
-- Integrate security scanning for Docker images.
-- Configure GitHub webhooks to trigger builds automatically.
-- Expand the pipeline to deploy applications to a staging environment.
-
-## Project Status
-
-**Completed:** Jenkins pipeline successfully built and pushed a Docker image to Docker Hub.
-
-*This repository documents a hands-on learning project. Source code and pipeline configuration will be added separately.*
+This project strengthened my hands-on understanding of how Jenkins, Docker, GitHub, and AWS work together to automate application delivery. I successfully completed the original CI/CD workflow and verified that the published Flask application could be recovered, rebuilt, and run in Docker.
